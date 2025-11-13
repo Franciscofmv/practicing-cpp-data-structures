@@ -1,4 +1,6 @@
+
 # Ignore everything that isn not .cpp or .h
+*
 !*.cpp
 !*.h
 
