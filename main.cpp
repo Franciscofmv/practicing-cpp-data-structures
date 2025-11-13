@@ -1,6 +1,3 @@
-/*
-Write a program that calculates the sum of all elements in a given array of integers.
-*/
 
 #include <iostream>
 #include <vector>
@@ -30,19 +27,34 @@ int calculateSum(const int arr[], const std::size_t arr_size){
 }
 
 /************************************************************************************************
-Function for Challenge 2.
+Functions for Challenge 2.
 Write a function that prints all the prime numbers in an array of integers.
 If a prime is found, add the prime to the vector passed as argument. 
 ************************************************************************************************/
+bool isPrime(const int &p){
+    if (p < 2)
+        return false;
+        // Using Wilson theorem (p-1)! congruent with -1 mod p:
+    size_t y = 1;
+    // Calculate factorial of (p-1) i.e. (p-1)!
+    size_t i = 1;
+    while (i <= (p-1)){
+        y *= i;
+    }
+        // Apply Wilson theorem:
+    if ((y + 1) % p == 0){
+        return true;
+    }
+    else
+        return false;
+}
 void findPrimes(const int arr[], size_t arr_size, std::vector<int> &primes){
-    switch (arr_size){
-        case 0:
-        case 1:
+    for(size_t i = 0; i < arr_size; ++i){
+        if (isPrime(arr[0])){
+            
+        }
     }
 };
-bool checkIfPrime(int &x){
-    return true;
-}
 
 int main(){
     // Challenge 1:
